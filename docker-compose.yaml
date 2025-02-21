@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  web:
+    image: python:3.9-slim
+    ports:
+      - "5000:5000"
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: example_db
+    ports:
+      - "5432:5432"
