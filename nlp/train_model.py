@@ -4,32 +4,26 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.multiclass import OneVsRestClassifier
 
-# Cargar ejemplos desde un JSON (con más variaciones)
 training_data = [
-    {"text": "Quiero MongoDB", "intent": "generate_mongodb"},
-    {"text": "mongodb", "intent": "generate_mongodb"},
-    {"text": "MongoDB", "intent": "generate_mongodb"},
-    {"text": "Necesito una base de datos en Mongo", "intent": "generate_mongodb"},
-    {"text": "Añadir MongoDB a la configuración", "intent": "generate_mongodb"},
-    {"text": "Instalar Redis para cache", "intent": "generate_redis"},
-    {"text": "Usar Redis en mi aplicación", "intent": "generate_redis"},
-    {"text": "Habilitar cache con Redis", "intent": "generate_redis"},
-    {"text": "Escalar con Kubernetes", "intent": "scale_replicas"},
-    {"text": "Necesito más réplicas", "intent": "scale_replicas"},
-    {"text": "Aumentar las instancias en Kubernetes", "intent": "scale_replicas"},
-    {"text": "Genera un archivo YAML", "intent": "generate_yaml"},
-    {"text": "Necesito un YAML de configuración", "intent": "generate_yaml"},
-    {"text": "Crear un manifiesto YAML", "intent": "generate_yaml"},
+    {"texts": ["Quiero MongoDB", "mongodb", "MongoDB", "Necesito una base de datos en Mongo", "Añadir MongoDB a la configuración"], "intent": "generate_mongodb"},
+    {"texts": ["Instalar Redis para cache", "Usar Redis en mi aplicación", "Habilitar cache con Redis"], "intent": "generate_redis"},
+    {"texts": ["Escalar con Kubernetes", "Necesito más réplicas", "Aumentar las instancias en Kubernetes"], "intent": "scale_replicas"},
+    {"texts": ["Genera un archivo YAML", "Necesito un YAML de configuración", "Crear un manifiesto YAML"], "intent": "generate_yaml"},
+    {"texts": ["Hola cómo estás", "Hello", "Hi"], "intent": "greet"}
 ]
 
-X_train = [item["text"] for item in training_data]
-y_train = [item["intent"] for item in training_data]
+# Expandir datos en listas planas
+X_train = []
+y_train = []
+for item in training_data:
+    X_train.extend(item["texts"])  # Agregar todas las variaciones
+    y_train.extend([item["intent"]] * len(item["texts"]))  # Repetir la intención
 
 # Vectorizar texto
 vectorizer = TfidfVectorizer()
 X_train_tfidf = vectorizer.fit_transform(X_train)
 
-# Modelo de clasificación multietiqueta
+# Modelo de clasificación
 model = OneVsRestClassifier(LogisticRegression())
 model.fit(X_train_tfidf, y_train)
 
@@ -37,4 +31,4 @@ model.fit(X_train_tfidf, y_train)
 joblib.dump(model, "nlp/model.pkl")
 joblib.dump(vectorizer, "nlp/vectorizer.pkl")
 
-print("✅ Modelo entrenado y guardado")
+print("✅ Modelo entrenado y guardado con frases agrupadas por intención")
