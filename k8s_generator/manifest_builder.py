@@ -6,8 +6,7 @@ DEFAULT_PORTS = {
     "postgres": 5432,
 }
 
-def generate_k8s_manifest(intent, docker_compose_file):
-    """Genera un manifiesto de Kubernetes basado en la intención del usuario"""
+def generate_k8s_manifest(docker_compose_file):
     docker_compose_data = yaml.safe_load(docker_compose_file.read())
 
     if "services" not in docker_compose_data:

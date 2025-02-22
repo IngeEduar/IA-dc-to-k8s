@@ -12,20 +12,30 @@ def convert_request():
     user_text = request.form.get("message", "")
     docker_compose_file = request.files.get("file")
 
-    if not docker_compose_file:
-        return jsonify({"error": "Debe incluir un archivo docker-compose.yml"}), 400
+    if bool(user_text) == bool(docker_compose_file):
+        return jsonify({"error": "Debe enviar solo texto o solo un archivo, no ambos."}), 400
 
-    intent = extract_intents(user_text)[0]
-    manifest_yaml = generate_k8s_manifest(intent, docker_compose_file)
+    if not bool(user_text) and not bool(docker_compose_file):
+        return jsonify({"error": "Debe enviar un texto o un archivo docker compose."}), 400
 
-    file_route = f"{uuid.uuid4()}-{intent}.yaml"
-    file_path = f"{TMP_DIR}/{file_route}"
-    with open(file_path, "w") as file:
-        file.write(manifest_yaml)
+    if docker_compose_file:
+        manifest_yaml = generate_k8s_manifest(docker_compose_file)
+
+        file_route = f"{uuid.uuid4()}.yaml"
+        file_path = f"{TMP_DIR}/{file_route}"
+        with open(file_path, "w") as file:
+            file.write(manifest_yaml)
+
+        return jsonify({
+            "message": "Aquí está su archivo",
+            "url": f"{request.host_url}download/{file_route}",
+        })
+
+    intent = extract_intents(user_text)
 
     return jsonify({
-        "message": "Aquí está su archivo",
-        "url": f"{request.host_url}download/{file_route}"
+        "message": "Estas son sus acciones",
+        "actions": intent
     })
 
 @main_bp.route("/download/<filename>", methods=["GET"])
