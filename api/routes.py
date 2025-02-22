@@ -1,3 +1,5 @@
+import random
+
 from flask import Blueprint, request, jsonify, send_from_directory
 from nlp.intent_recognizer import extract_intents
 from k8s_generator.manifest_builder import generate_k8s_manifest
@@ -31,12 +33,19 @@ def convert_request():
             "url": f"{request.host_url}download/{file_route}",
         })
 
-    intent = extract_intents(user_text)
+    intents = extract_intents(user_text)
 
-    return jsonify({
+    json_response = {
         "message": "Estas son sus acciones",
-        "actions": intent
-    })
+        "actions": intents
+    }
+
+    for intent in intents:
+        if intent in globals() and callable(globals()[intent]):
+            output = globals()[intent]()
+            json_response[intent] = output
+
+    return jsonify(json_response)
 
 @main_bp.route("/download/<filename>", methods=["GET"])
 def download_file(filename):
@@ -44,3 +53,13 @@ def download_file(filename):
     if os.path.exists(file_path):
         return send_from_directory(TMP_DIR, filename, as_attachment=True)
     return jsonify({"error": "Archivo no encontrado"}), 404
+
+
+## TMP
+def greet():
+    greets = [
+        "Hola, ¿cómo estás? ¿puedo ayudarte?",
+        "¡Hola! me siento afiortunado de tenerte aquí",
+        "Hola ¿Puedo ayudarte creando manifiestos de kubernetes?",
+    ]
+    return greets[random.randint(0, len(greets) - 1)]
