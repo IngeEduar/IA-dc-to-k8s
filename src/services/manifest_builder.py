@@ -37,7 +37,7 @@ DATA = [
                 "CPU": "1000m"
             }
         },
-        "comment": ""
+        "comment": "Estos son los manifiestos para tu servicio de postgres"
     }
 ]
 

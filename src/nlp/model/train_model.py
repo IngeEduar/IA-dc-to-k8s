@@ -9,7 +9,7 @@ training_data = [
     {"texts": ["Instalar Redis para cache", "Usar Redis en mi aplicación", "Habilitar cache con Redis"], "intent": "generate_redis"},
     {"texts": ["Escalar con Kubernetes", "Necesito más réplicas", "Aumentar las instancias en Kubernetes"], "intent": "scale_replicas"},
     {"texts": ["Genera un archivo YAML", "Necesito un YAML de configuración", "Crear un manifiesto YAML"], "intent": "generate_yaml"},
-    {"texts": ["Hola cómo estás", "Hello", "Hi"], "intent": "greet"}
+    {"texts": ["Hola, ¿cómo estás?","Hello","Hi","¡Hola!","Buenas","Hey","Saludos","Qué tal","Hola, buen día","Hola, ¿qué tal?","Hola, ¿cómo va?","Hola, un gusto saludarte","¡Hey! ¿Cómo andas?","Hola, ¿todo bien?","Hi there!","Hello, how are you?","Hola, ¿qué hay de nuevo?","Buenas, ¿cómo va?","¡Hey! ¿Qué pasa?","Hola, ¿cómo te encuentras?"], "intent": "greet"}
 ]
 
 # Expandir datos en listas planas

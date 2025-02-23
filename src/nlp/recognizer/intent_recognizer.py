@@ -4,7 +4,7 @@ import numpy as np
 model = joblib.load("src/nlp/model/model.pkl")
 vectorizer = joblib.load("src/nlp/model/vectorizer.pkl")
 
-def extract_intents(user_text, threshold=0.5):
+def extract_intents(user_text, threshold=0.7):
     user_input_tfidf = vectorizer.transform([user_text])
     probabilities = model.predict_proba(user_input_tfidf)[0]
 
