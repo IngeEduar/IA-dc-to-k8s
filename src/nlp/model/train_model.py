@@ -28,7 +28,7 @@ model = OneVsRestClassifier(LogisticRegression())
 model.fit(X_train_tfidf, y_train)
 
 # Guardar modelo y vectorizador
-joblib.dump(model, "nlp/model.pkl")
-joblib.dump(vectorizer, "nlp/vectorizer.pkl")
+joblib.dump(model, "src/nlp/model/model.pkl")
+joblib.dump(vectorizer, "src/nlp/model/vectorizer.pkl")
 
 print("✅ Modelo entrenado y guardado con frases agrupadas por intención")
