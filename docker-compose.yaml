@@ -10,5 +10,7 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
       POSTGRES_DB: example_db
+    volumes:
+      - ./data:/var/lib/postgresql
     ports:
       - "5432:5432"

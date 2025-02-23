@@ -1,8 +1,8 @@
 import joblib
 import numpy as np
 
-model = joblib.load("nlp/model.pkl")
-vectorizer = joblib.load("nlp/vectorizer.pkl")
+model = joblib.load("src/nlp/model/model.pkl")
+vectorizer = joblib.load("src/nlp/model/vectorizer.pkl")
 
 def extract_intents(user_text, threshold=0.5):
     user_input_tfidf = vectorizer.transform([user_text])

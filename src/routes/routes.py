@@ -1,8 +1,8 @@
 import random
 
 from flask import Blueprint, request, jsonify, send_from_directory
-from nlp.intent_recognizer import extract_intents
-from k8s_generator.manifest_builder import generate_k8s_manifest
+from src.nlp.recognizer.intent_recognizer import extract_intents
+from src.services.manifest_builder import generate_k8s_manifest_docker_compose
 import os, uuid
 
 main_bp = Blueprint("main", __name__)
@@ -21,7 +21,7 @@ def convert_request():
         return jsonify({"error": "Debe enviar un texto o un archivo docker compose."}), 400
 
     if docker_compose_file:
-        manifest_yaml = generate_k8s_manifest(docker_compose_file)
+        manifest_yaml = generate_k8s_manifest_docker_compose(docker_compose_file)
 
         file_route = f"{uuid.uuid4()}.yaml"
         file_path = f"{TMP_DIR}/{file_route}"
@@ -59,7 +59,7 @@ def download_file(filename):
 def greet():
     greets = [
         "Hola, ¿cómo estás? ¿puedo ayudarte?",
-        "¡Hola! me siento afiortunado de tenerte aquí",
+        "¡Hola! me siento afortunado de tenerte aquí",
         "Hola ¿Puedo ayudarte creando manifiestos de kubernetes?",
     ]
     return greets[random.randint(0, len(greets) - 1)]

@@ -8,7 +8,7 @@ RUN pip install -r requirements.txt
 
 COPY nlp nlp
 
-RUN python nlp/train_model.py
+RUN python src/nlp/model/train_model.py
 
 COPY . .
 
