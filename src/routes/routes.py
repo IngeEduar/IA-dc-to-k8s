@@ -1,8 +1,7 @@
-import random
-
 from flask import Blueprint, request, jsonify, send_from_directory
 from src.nlp.recognizer.intent_recognizer import extract_intents
 from src.services.manifest_builder import generate_k8s_manifest_docker_compose
+from src.actions.greet import greet
 import os, uuid
 
 main_bp = Blueprint("main", __name__)
@@ -53,13 +52,3 @@ def download_file(filename):
     if os.path.exists(file_path):
         return send_from_directory(TMP_DIR, filename, as_attachment=True)
     return jsonify({"error": "Archivo no encontrado"}), 404
-
-
-## TMP
-def greet():
-    greets = [
-        "Hola, ¿cómo estás? ¿puedo ayudarte?",
-        "¡Hola! me siento afortunado de tenerte aquí",
-        "Hola ¿Puedo ayudarte creando manifiestos de kubernetes?",
-    ]
-    return greets[random.randint(0, len(greets) - 1)]
