@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, send_from_directory
 from src.nlp.recognizer.intent_recognizer import extract_intents
 from src.services.manifest_builder import generate_k8s_manifest_docker_compose
-from src.actions.greet import greet
+from src.actions.generic_actions import greet, not_found
 import os, uuid
 
 main_bp = Blueprint("main", __name__)

@@ -6,11 +6,9 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-COPY nlp nlp
+COPY . .
 
 RUN python src/nlp/model/train_model.py
-
-COPY . .
 
 LABEL org.opencontainers.maintainer.name="Eduar Xavier Avendaño" \
     org.opencontainers.maintainer.email="xavieravendano9@gmail.com" \
