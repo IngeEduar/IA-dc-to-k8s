@@ -1,0 +1,11 @@
+{"texts": [
+        "Necesito MySQL", "Instalar MySQL en Kubernetes", "Cómo crear una base de datos MySQL",
+        "Añadir MySQL a mi clúster", "Quiero un servicio MySQL", "Cómo desplegar MySQL en Kubernetes",
+        "Generar un manifiesto para MySQL", "Configurar almacenamiento persistente en MySQL",
+        "Configurar MySQL con usuario y contraseña", "Crear un StatefulSet para MySQL",
+        "Desplegar MySQL en mi infraestructura", "Cómo conectar MySQL a mi aplicación",
+        "Quiero usar MySQL en Kubernetes", "Configurar MySQL con un volumen persistente",
+        "Añadir MySQL con ClusterIP", "Configurar una base de datos inicial en MySQL",
+        "Implementar MySQL con réplicas", "Cómo gestionar MySQL en un clúster Kubernetes",
+        "Crear un servicio de MySQL accesible desde mi aplicación", "Configurar MySQL con backups automáticos"
+    ], "intent": "generate_mysql"}

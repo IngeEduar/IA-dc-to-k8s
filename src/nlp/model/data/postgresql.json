@@ -1,0 +1,13 @@
+{"texts": [
+        "Necesito PostgreSQL", "Instalar PostgreSQL en Kubernetes", "Quiero una base de datos PostgreSQL",
+        "Configurar PostgreSQL con almacenamiento persistente", "Añadir PostgreSQL al clúster",
+        "Generar un manifiesto para PostgreSQL", "Configurar PostgreSQL con autenticación",
+        "Quiero usar PostgreSQL en Kubernetes",
+        "Crear un StatefulSet para PostgreSQL", "Implementar PostgreSQL con una base de datos inicial",
+        "Cómo desplegar PostgreSQL en Kubernetes", "Configurar PostgreSQL con un volumen persistente",
+        "Crear un servicio para PostgreSQL", "Configurar réplicas en PostgreSQL",
+        "Cómo conectar mi aplicación a PostgreSQL",
+        "Añadir PostgreSQL con almacenamiento en disco", "Configurar PostgreSQL con un usuario y contraseña",
+        "Quiero una base de datos relacional como PostgreSQL", "Desplegar PostgreSQL con ClusterIP",
+        "Crear un servicio PostgreSQL accesible desde mi aplicación"
+    ], "intent": "generate_postgresql"}

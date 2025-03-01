@@ -1,0 +1,12 @@
+{"texts": [
+        "Necesito un servidor Nginx", "Instalar Nginx en Kubernetes", "Quiero usar Nginx como proxy",
+        "Configurar Nginx en un clúster Kubernetes", "Cómo desplegar Nginx en Kubernetes",
+        "Generar un manifiesto YAML para Nginx", "Añadir Nginx como balanceador de carga",
+        "Configurar Nginx con reglas de enrutamiento", "Cómo hacer un Ingress con Nginx",
+        "Implementar Nginx con configuración personalizada", "Crear un servicio Nginx en Kubernetes",
+        "Configurar Nginx con HTTPS", "Cómo hacer redirecciones en Nginx",
+        "Añadir Nginx con almacenamiento persistente",
+        "Configurar Nginx con un archivo de configuración externo", "Quiero un servicio de Nginx con ClusterIP",
+        "Implementar un Nginx como proxy inverso", "Configurar Nginx con módulos personalizados",
+        "Desplegar Nginx con múltiples sitios virtuales", "Crear un servicio para Nginx accesible desde el clúster"
+    ], "intent": "generate_nginx"}

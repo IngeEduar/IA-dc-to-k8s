@@ -1,0 +1,12 @@
+{"texts": [
+        "Necesito Elasticsearch", "Quiero un clúster de Elasticsearch", "Instalar Elasticsearch en Kubernetes",
+        "Cómo desplegar Elasticsearch", "Configurar almacenamiento en Elasticsearch",
+        "Crear un StatefulSet para Elasticsearch", "Añadir Elasticsearch a mi infraestructura",
+        "Generar un manifiesto YAML para Elasticsearch", "Configurar Elasticsearch con seguridad",
+        "Implementar Elasticsearch con persistencia", "Cómo escalar Elasticsearch en Kubernetes",
+        "Configurar Elasticsearch con índices automáticos", "Añadir un servicio para Elasticsearch",
+        "Configurar Elasticsearch con Logstash y Kibana", "Cómo conectar Elasticsearch a mi aplicación",
+        "Configurar Elasticsearch con volúmenes persistentes", "Quiero un servicio de Elasticsearch accesible",
+        "Añadir un clúster de Elasticsearch con alta disponibilidad", "Configurar Elasticsearch con réplicas",
+        "Crear un servicio de Elasticsearch con ClusterIP"
+    ], "intent": "generate_elasticsearch"}

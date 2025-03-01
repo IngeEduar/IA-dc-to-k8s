@@ -1,0 +1,11 @@
+{"texts": [
+        "Instalar Redis para cache", "Usar Redis en mi aplicación", "Habilitar cache con Redis",
+        "Quiero Redis en Kubernetes", "Añadir Redis como caché", "Cómo configurar Redis en un clúster",
+        "Crear un servicio de Redis", "Configurar persistencia en Redis", "Necesito una caché en Redis",
+        "Desplegar Redis en mi infraestructura", "Implementar un servidor Redis", "Configurar Redis con Kubernetes",
+        "Genera un manifiesto YAML para Redis", "Cómo escalar Redis en Kubernetes",
+        "Quiero usar Redis como base de datos",
+        "Crear un StatefulSet para Redis", "Configurar Redis con alta disponibilidad",
+        "Añadir un servicio de Redis con ClusterIP",
+        "Configurar Redis con una contraseña segura", "Implementar Redis con almacenamiento persistente"
+    ], "intent": "generate_redis"}

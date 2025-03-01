@@ -1,0 +1,12 @@
+{"texts": [
+        "Genera un archivo YAML", "Necesito un YAML de configuración", "Crear un manifiesto YAML",
+        "Cómo hacer un YAML para Kubernetes", "Generar configuración en YAML",
+        "Crear un Deployment en YAML", "Quiero un archivo YAML para un servicio",
+        "Cómo escribir un manifiesto YAML", "Generar un YAML para un Ingress",
+        "Quiero crear un ConfigMap en YAML", "Generar un YAML para un Secret",
+        "Crear un Service en YAML", "Cómo escribir un YAML para un StatefulSet",
+        "Crear un DaemonSet en YAML", "Generar un YAML para una aplicación",
+        "Cómo definir volúmenes en un YAML", "Quiero un YAML para una base de datos",
+        "Cómo configurar variables de entorno en YAML", "Generar un YAML para un CronJob",
+        "Quiero un YAML con múltiples recursos de Kubernetes"
+    ], "intent": "generate_yaml"}

@@ -1,0 +1,30 @@
+{
+  "texts": [
+    "Quiero MongoDB",
+    "Quiero un mongodb",
+    "mongodb",
+    "MongoDB",
+    "Necesito una base de datos en Mongo",
+    "Añadir MongoDB a la configuración",
+    "Crear un servicio de MongoDB en Kubernetes",
+    "Desplegar MongoDB en mi clúster",
+    "Generar un manifiesto para MongoDB",
+    "Configurar una base de datos MongoDB",
+    "Quiero una base de datos NoSQL como MongoDB",
+    "Añadir una instancia de MongoDB",
+    "Configurar almacenamiento persistente para MongoDB",
+    "Necesito MongoDB en Kubernetes",
+    "Cómo crear una base de datos en MongoDB",
+    "Implementar MongoDB con persistencia",
+    "Genera una configuración para MongoDB",
+    "Quiero usar MongoDB con un volumen persistente",
+    "Crear un StatefulSet para MongoDB",
+    "Configurar autenticación en MongoDB",
+    "Añadir un servicio de MongoDB con ClusterIP",
+    "Generar mongodb",
+    "para desplegar mongodb",
+    "desplegar mongodb",
+    "usando mongodb"
+  ],
+  "intent": "generate_mongodb"
+}
