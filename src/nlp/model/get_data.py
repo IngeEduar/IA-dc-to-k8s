@@ -11,7 +11,6 @@ def get_data():
         "mysql.json",
         "elasticsearch.json",
         "nginx.json",
-        "yaml.json",
         "greet.json"
     ]
 

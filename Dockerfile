@@ -9,6 +9,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 RUN python src/nlp/model/train_model.py
+RUN python -m spacy download es_core_news_sm
 
 LABEL org.opencontainers.maintainer.name="Eduar Xavier Avendaño" \
     org.opencontainers.maintainer.email="xavieravendano9@gmail.com" \

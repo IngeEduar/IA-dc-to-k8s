@@ -1,7 +1,6 @@
 from flask import Blueprint, request, jsonify, send_from_directory
-from src.nlp.recognizer.intent_recognizer import extract_intents
-from src.services.manifest_builder import generate_k8s_manifest_docker_compose
-from src.actions.generic_actions import greet, not_found
+from src.services.intent_exec import intent_exec
+from src.services.docker.manifest_builder import generate_k8s_manifest_docker_compose
 import os, uuid
 
 main_bp = Blueprint("main", __name__)
@@ -31,20 +30,8 @@ def convert_request():
             "message": "Aquí está su archivo",
             "url": f"{request.host_url}download/{file_route}",
         })
-
-    intents = extract_intents(user_text)
-
-    json_response = {
-        "message": "Estas son sus acciones",
-        "actions": intents
-    }
-
-    for intent in intents:
-        if intent in globals() and callable(globals()[intent]):
-            output = globals()[intent]()
-            json_response[intent] = output
-
-    return jsonify(json_response)
+    else:
+        return intent_exec(user_text)
 
 @main_bp.route("/download/<filename>", methods=["GET"])
 def download_file(filename):

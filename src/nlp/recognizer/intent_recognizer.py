@@ -13,8 +13,6 @@ def extract_intents(user_text, threshold=0.7):
     user_input_tfidf = vectorizer.transform([user_text])
     probabilities = model.predict_proba(user_input_tfidf)[0]
 
-    # print(f"Probabilidades del modelo: {probabilities}") DEBUG
-
     intent_list = model.classes_
 
     detected_intents = [str(intent_list[i]) for i in np.where(probabilities >= threshold)[0]]
@@ -30,7 +28,3 @@ def extract_intents(user_text, threshold=0.7):
 
 
     return detected_intents
-
-## DEBUG
-#text = "Quiero MongoDB y Usar Redis en mi aplicación"
-#print(f"Intenciones detectadas: {extract_intents(text)}")

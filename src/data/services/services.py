@@ -1,7 +1,7 @@
 DATA = [
     {
         "image": "postgres",
-        "name": "postgres",
+        "name": "Postgres",
         "tags": [
             "14",
             "latest"
